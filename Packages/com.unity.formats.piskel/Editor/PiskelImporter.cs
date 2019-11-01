@@ -5,9 +5,13 @@ using UnityEngine;
 
 namespace Unity.Formats.Piskel.Editor
 {
-    [ScriptedImporter(2, "piskel")]
+    [ScriptedImporter(3, "piskel")]
     public class PiskelImporter : ScriptedImporter
     {
+        public bool firstLayerIsRoot = false;
+        public int layerOrderingStartIndex = 0;
+        public PiskelSpriteSettings spriteSettings = new PiskelSpriteSettings();
+
         public override void OnImportAsset(AssetImportContext ctx)
         {
             var piskel = PiskelDocument.FromPiskelJson(File.ReadAllText(ctx.assetPath));
@@ -34,13 +38,22 @@ namespace Unity.Formats.Piskel.Editor
 
             for (var i = 0; i < piskel.layers.Length; i++)
             {
-                GameObject layerObj = new GameObject(piskel.layers[i].name);
-                layerObj.transform.parent = go.transform;
+                GameObject layerObj;
+                if (firstLayerIsRoot && i == 0)
+                {
+                    layerObj = go;
+                }
+                else
+                {
+                    layerObj = new GameObject(piskel.layers[i].name);
+                    layerObj.transform.parent = go.transform;
+                }
 
                 var spriteRenderer = layerObj.AddComponent<SpriteRenderer>();
+                spriteRenderer.sortingOrder = layerOrderingStartIndex + i;
                 spriteRenderer.color = new Color(1, 1, 1, piskel.layers[i].opacity);
 
-                piskel.GenerateTexturesAndSpritesForLayer(i, out var textures, out var sprites, new PiskelSpriteSettings());
+                piskel.GenerateTexturesAndSpritesForLayer(i, out var textures, out var sprites, spriteSettings);
                 foreach (var texture2D in textures)
                 {
                     texture2D.hideFlags = HideFlags.HideInHierarchy;
@@ -60,7 +73,7 @@ namespace Unity.Formats.Piskel.Editor
 
                 var binding = new EditorCurveBinding
                 {
-                    path = layerObj.name,
+                    path = layerObj == go ? "" : layerObj.name,
                     type = typeof(SpriteRenderer),
                     propertyName = "m_Sprite"
                 };
