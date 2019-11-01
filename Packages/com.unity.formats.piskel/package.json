@@ -1,0 +1,7 @@
+{
+  "name": "com.unity.formats.piskel",
+  "displayName": "Piskel",
+  "version": "0.1.0-preview",
+  "unity": "2019.3",
+  "description": "Implementation of a Piskel Importer."
+}
