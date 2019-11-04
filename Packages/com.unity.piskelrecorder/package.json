@@ -1,0 +1,11 @@
+{
+  "name": "com.unity.piskelrecorder",
+  "displayName": "Piskel Recorder",
+  "version": "0.1.0-preview",
+  "unity": "2019.3",
+  "description": "Implementation of a Piskel Recorder.",
+  "dependencies": {
+    "com.unity.formats.piskel": "0.1.0-preview",
+    "com.unity.recorder": "2.0.3-preview.1"
+  }
+}

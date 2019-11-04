@@ -1,0 +1,16 @@
+{
+    "name": "Unity.PiskelRecorder",
+    "references": [
+        "GUID:847b179520b009e4c8d15c296b1cbf35",
+        "GUID:1bd6b7b7a04dbc843863787c4761aa80"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
