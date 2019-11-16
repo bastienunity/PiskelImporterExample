@@ -1,0 +1,15 @@
+{
+    "name": "Unity.Formats.Piskel.Editor",
+    "references": [
+        "GUID:1bd6b7b7a04dbc843863787c4761aa80"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
