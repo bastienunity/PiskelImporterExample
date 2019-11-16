@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 88cf050443589b14f8d40aa9dad21663
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 96bcbf1c1e174ec4580554e67105dd1e, type: 3}
+  firstLayerIsRoot: 0
+  layerOrderingStartIndex: 0
+  spriteSettings:
+    pivot: 1
+    customPivotValue: {x: 0, y: 0}
+    pixelsPerUnits: 100
